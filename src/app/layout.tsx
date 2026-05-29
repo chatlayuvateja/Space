@@ -1,19 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import { LazyMotion, domAnimation } from "framer-motion";
+import { LaunchProvider } from "@/contexts/LaunchesContext";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "SpaceExplore — Explore the Cosmos",
+  title: "COSMOS — Real-Time Space Intelligence",
   description:
     "Track the International Space Station in real-time, discover upcoming rocket launches, explore NASA's Astronomy Picture of the Day, and stay informed with the latest space news.",
   keywords: [
@@ -24,13 +30,14 @@ export const metadata: Metadata = {
     "space launches",
     "astronomy",
     "APOD",
+    "cosmos",
   ],
   openGraph: {
-    title: "SpaceExplore — Explore the Cosmos",
+    title: "COSMOS — Real-Time Space Intelligence",
     description:
       "Real-time ISS tracking, upcoming launches, NASA APOD, and space news.",
     type: "website",
-    siteName: "SpaceExplore",
+    siteName: "COSMOS",
   },
 };
 
@@ -42,10 +49,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${inter.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-space-950 text-space-100 font-sans">
-        {children}
+      <body className="min-h-full flex flex-col bg-background text-text-primary font-sans">
+        <LazyMotion features={domAnimation}>
+          <LaunchProvider>
+            {children}
+          </LaunchProvider>
+        </LazyMotion>
       </body>
     </html>
   );

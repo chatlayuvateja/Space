@@ -4,33 +4,35 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cosmic-400 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 gap-2",
+  "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 gap-2 group select-none",
   {
     variants: {
       variant: {
-        default:
-          "bg-gradient-to-r from-cosmic-500 to-nebula-500 text-white shadow-lg shadow-cosmic-500/25 hover:shadow-xl hover:shadow-cosmic-500/30 hover:scale-[1.02] active:scale-[0.98]",
+        primary:
+          "bg-gradient-to-r from-accent-cyan to-accent-purple text-[#080b14] font-semibold rounded-xl px-5 py-2.5 hover:scale-[1.02] hover:brightness-105 active:scale-[0.98] shadow-lg shadow-accent-cyan/20",
         secondary:
-          "glass-strong text-space-100 hover:bg-white/10 hover:scale-[1.02] active:scale-[0.98]",
+          "border border-[rgba(255,255,255,0.1)] text-text-primary rounded-xl px-5 py-2.5 hover:bg-white/5 hover:border-[rgba(255,255,255,0.15)] active:scale-[0.98]",
         ghost:
-          "text-space-300 hover:text-space-100 hover:bg-white/5",
+          "text-text-secondary rounded-xl px-3 py-2 hover:text-text-primary hover:bg-white/5 active:scale-[0.98]",
         outline:
-          "border border-white/10 text-space-200 hover:bg-white/5 hover:border-white/20 hover:scale-[1.02] active:scale-[0.98]",
+          "border border-[rgba(255,255,255,0.08)] text-text-primary rounded-xl px-5 py-2.5 hover:bg-white/5 hover:border-[rgba(255,255,255,0.15)] active:scale-[0.98]",
         link:
-          "text-cosmic-400 underline-offset-4 hover:underline",
+          "text-accent-cyan underline-offset-4 hover:underline px-1 py-1",
         glow:
-          "bg-white/5 backdrop-blur-xl border border-white/10 text-space-100 shadow-lg hover:bg-white/10 hover:border-cosmic-400/50 hover:shadow-cosmic-500/20 hover:scale-[1.02] active:scale-[0.98]",
+          "bg-[rgba(255,255,255,0.04)] backdrop-blur-xl border border-[rgba(255,255,255,0.08)] text-text-primary rounded-xl px-5 py-2.5 hover:bg-[rgba(255,255,255,0.08)] hover:border-accent-cyan/30 hover:shadow-lg hover:shadow-accent-cyan/10 active:scale-[0.98]",
+        purple:
+          "bg-gradient-to-r from-accent-purple to-accent-purple/80 text-white font-semibold rounded-xl px-5 py-2.5 hover:scale-[1.02] hover:brightness-110 active:scale-[0.98] shadow-lg shadow-accent-purple/20",
       },
       size: {
-        default: "h-10 px-6 py-2",
-        sm: "h-8 rounded-full px-4 text-xs",
-        lg: "h-12 rounded-full px-8 text-base",
-        xl: "h-14 rounded-full px-10 text-lg",
-        icon: "h-10 w-10",
+        default: "h-10",
+        sm: "h-8 px-4 text-xs rounded-lg",
+        lg: "h-12 px-6 text-base rounded-xl",
+        xl: "h-14 px-8 text-lg rounded-xl",
+        icon: "h-10 w-10 rounded-xl border border-[rgba(255,255,255,0.08)] hover:bg-white/5",
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: "primary",
       size: "default",
     },
   }

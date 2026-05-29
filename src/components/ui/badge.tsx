@@ -3,24 +3,28 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const badgeVariants = cva(
-  "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors",
+  "inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium uppercase tracking-wide transition-all duration-200",
   {
     variants: {
       variant: {
         default:
-          "bg-cosmic-500/20 text-cosmic-300 border border-cosmic-500/30",
+          "bg-[rgba(129,140,248,0.12)] text-accent-purple border border-[rgba(129,140,248,0.25)] hover:shadow-[0_0_12px_rgba(129,140,248,0.2)]",
         secondary:
-          "bg-white/5 text-space-300 border border-white/10",
+          "bg-white/5 text-text-secondary border border-white/10 hover:shadow-[0_0_12px_rgba(255,255,255,0.08)]",
         destructive:
-          "bg-red-500/20 text-red-300 border border-red-500/30",
+          "bg-[rgba(248,113,113,0.12)] text-accent-red border border-[rgba(248,113,113,0.25)] hover:shadow-[0_0_12px_rgba(248,113,113,0.2)]",
         success:
-          "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30",
+          "bg-[rgba(52,211,153,0.12)] text-accent-green border border-[rgba(52,211,153,0.25)] hover:shadow-[0_0_12px_rgba(52,211,153,0.2)]",
         warning:
-          "bg-stellar-500/20 text-stellar-300 border border-stellar-500/30",
+          "bg-[rgba(251,191,36,0.12)] text-accent-amber border border-[rgba(251,191,36,0.25)] hover:shadow-[0_0_12px_rgba(251,191,36,0.2)]",
         nebula:
-          "bg-nebula-500/20 text-nebula-300 border border-nebula-500/30",
+          "bg-[rgba(168,85,247,0.12)] text-accent-purple border border-[rgba(168,85,247,0.25)] hover:shadow-[0_0_12px_rgba(168,85,247,0.2)]",
         aurora:
-          "bg-aurora-500/20 text-aurora-300 border border-aurora-500/30",
+          "bg-[rgba(34,211,238,0.12)] text-accent-cyan border border-[rgba(34,211,238,0.25)] hover:shadow-[0_0_12px_rgba(34,211,238,0.2)]",
+        orbit:
+          "bg-white/5 text-text-secondary border border-white/10 font-mono text-[10px]",
+        agency:
+          "bg-white/5 text-text-primary border border-white/10",
       },
     },
     defaultVariants: {
